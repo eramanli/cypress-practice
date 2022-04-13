@@ -1,0 +1,5 @@
+{
+  "baseUrl": "https://www.trendyol.com/en/",
+  "retries": 1,
+  "screenshotsFolder": "../cypress-practice/cypress/screenshots"
+}
