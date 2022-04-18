@@ -1,3 +1,1 @@
-module.exports = (on, config) => {
-    // configure plugins here
-}
+Cypress.config('defaultCommandTimeout', 10000)

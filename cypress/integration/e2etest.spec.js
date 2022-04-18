@@ -1,16 +1,15 @@
 describe("End to end tests", () => {
-    beforeEach(() => {
+    before(() => {
         cy.visit("/");
     });
     context("when the user is not logged in", () => {
-        it("should display the correct title", () => {
-            cy.title().should("include", "Trendyol");
-        });
-    });
+      it("should display the correct title",() => {
+          cy.title().should("include", "Trendyol");
+      })
+    })
     context("when the user is logged in", () => {
-        it("should display the correct title", () => {
+        it("should display the correct title",() => {
             cy.title().should("include", "Trendyol");
-        });
-    });
-});
-
+        })
+    })
+})
