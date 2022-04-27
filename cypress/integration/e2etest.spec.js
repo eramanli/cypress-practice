@@ -10,12 +10,10 @@ describe("End to end tests", () => {
     });
   context("Country Selection", () => {
       it('should select a country', function () {
-          cy.get(COUNTRY_SELECTION_POPUP).should('be.visible');
-          cy.get(COUNTRY_SELECTION_DROPDOWN).select('United Kingdom');
-          cy.get(COUNTRY_SELECTION_CONFIRM_BUTTON).click();
+          cy.selectCountry("United Kingdom");
           cy.get(SELECTED_COUNTRY_CODE).contains('GB');
           cy.get(SELECTED_COUNTRY_FLAG).should('have.attr', 'src')
               .and('include', 'flags/gb');
       });
   });
-})
+});
