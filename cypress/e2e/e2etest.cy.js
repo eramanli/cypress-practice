@@ -5,15 +5,20 @@ import {
 } from "../support/locators/e2e-elements";
 
 describe("End to end tests", () => {
-    before(() => {
+    beforeEach(() => {
+        cy.clearCookies();
         cy.visit("/");
     });
   context("Country Selection", () => {
       it('should select a country', function () {
-          cy.selectCountry("United Kingdom");
-          cy.get(SELECTED_COUNTRY_CODE).contains('GB');
+          cy.selectCountry("Belgium");
+          cy.get(SELECTED_COUNTRY_CODE).contains('BE', {matchCase:false});
           cy.get(SELECTED_COUNTRY_FLAG).should('have.attr', 'src')
-              .and('include', 'flags/gb');
+              .and('include', 'flags/be');
       });
+  });
+
+  context("Search Result Page", () => {
+
   });
 });
